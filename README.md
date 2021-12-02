@@ -1,2 +1,2 @@
-CS7650 NLP_Final_Project
+CS7650 NLP: Final Project
 
