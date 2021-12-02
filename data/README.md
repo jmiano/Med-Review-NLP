@@ -1,1 +1,1 @@
-Insert datasets (drugsComTrain_raw.csv and drugsComTest_raw.csv) here when running code locally.
+Insert datasets (drugsComTrain_raw.csv and drugsComTest_raw.csv) in this directory when running code locally.
