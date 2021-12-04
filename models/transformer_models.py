@@ -30,12 +30,12 @@ class UsefulScoreRegressorTextOnly(nn.Module):
 
 
 class UsefulScoreRegressorAllFeat(nn.Module):
-    def __init__(self, encoder, hidden_dim=768, outputs=1, dropout=0.1):
+    def __init__(self, encoder, hidden_dim=768, num_meta_feats=0, outputs=1, dropout=0.1):
         super().__init__()
 
         # Initializaton
         self.encoder = encoder
-        self.hidden_dim = hidden_dim
+        self.hidden_dim = hidden_dim + num_meta_feats
         
         # Head Architecture
         self.head_lin1 = nn.Linear(in_features=self.hidden_dim, out_features=int(self.hidden_dim))
@@ -44,10 +44,10 @@ class UsefulScoreRegressorAllFeat(nn.Module):
         self.head_lin2 = nn.Linear(in_features=int(self.hidden_dim), out_features=outputs)
 
 
-    def forward(self, tokens, attention_mask):
-        print('Still need to implement concatenation of nontext features and change to linear layer dim')
+    def forward(self, tokens, attention_mask, meta_feats):
         output = self.encoder(tokens, attention_mask)
-        logits = self.head_lin1(output.last_hidden_state[:, 0])
+        output = torch.cat([output.last_hidden_state[:, 0], meta_feats], dim=1)
+        logits = self.head_lin1(output)
         logits = self.lrelu(logits)
         logits = self.dropout(logits)
         logits = self.head_lin2(logits)
