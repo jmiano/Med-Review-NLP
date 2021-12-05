@@ -12,7 +12,7 @@ def clean_reviews(review):
     return clean_review
 
 
-def load_data(file_path, year_range=[2008, 2017], usefulCount_range=[0, 10000]):
+def load_data(file_path, year_range=[2008, 2017], usefulCount_range=[0, 10000], usefulCount_quantile=None):
     # Read CSV
     df = pd.read_csv(file_path, encoding='utf-8')
 
@@ -36,6 +36,8 @@ def load_data(file_path, year_range=[2008, 2017], usefulCount_range=[0, 10000]):
     df['usefulScoreLog'] = df['usefulScoreLog'].replace(-np.Inf, 0)
 
     # Cap the usefulCount to create a new target variable column
+    if usefulCount_quantile is not None:
+        usefulCount_range = [0, int(df['usefulCount'].quantile(q=usefulCount_quantile))]
     df['usefulCountCapped'] = df['usefulCount'].apply(lambda row : cap_col_val(row, usefulCount_range))
 
     # Normalize usefulCountCapped
