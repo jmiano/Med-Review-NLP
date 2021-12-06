@@ -47,10 +47,10 @@ def train_text_model(num_epochs=1, model=None, optimizer=None,
         
         if (avg_val_loss < best_val_loss):
             torch.save(model, save_path)
-            print (f'Epoch {epoch}, val loss: {best_val_loss:.5f} -> {avg_val_loss:.5f}, train loss: {avg_train_loss:.5f}')
+            print (f'Epoch {epoch}, val loss: {best_val_loss:.8f} -> {avg_val_loss:.8f}, train loss: {avg_train_loss:.8f}')
             best_val_loss = avg_val_loss
         else:
-            print (f'Epoch {epoch}, val loss: {avg_val_loss:.5f}, train loss: {avg_train_loss:.5f}')
+            print (f'Epoch {epoch}, val loss: {avg_val_loss:.8f}, train loss: {avg_train_loss:.8f}')
 
 
 
@@ -99,10 +99,10 @@ def train_text_meta_model(num_epochs=1, model=None, optimizer=None,
         
         if (avg_val_loss < best_val_loss):
             torch.save(model, save_path)
-            print (f'Epoch {epoch}, val loss: {best_val_loss:.5f} -> {avg_val_loss:.5f}, train loss: {avg_train_loss:.5f}')
+            print (f'Epoch {epoch}, val loss: {best_val_loss:.8f} -> {avg_val_loss:.8f}, train loss: {avg_train_loss:.8f}')
             best_val_loss = avg_val_loss
         else:
-            print (f'Epoch {epoch}, val loss: {avg_val_loss:.5f}, train loss: {avg_train_loss:.5f}')
+            print (f'Epoch {epoch}, val loss: {avg_val_loss:.8f}, train loss: {avg_train_loss:.8f}')
 
 
 
@@ -151,7 +151,7 @@ def train_meta_model(num_epochs=1, model=None, optimizer=None,
         
         if (avg_val_loss < best_val_loss):
             torch.save(model, save_path)
-            print (f'Epoch {epoch}, val loss: {best_val_loss:.5f} -> {avg_val_loss:.5f}, train loss: {avg_train_loss:.5f}')
+            print (f'Epoch {epoch}, val loss: {best_val_loss:.8f} -> {avg_val_loss:.8f}, train loss: {avg_train_loss:.8f}')
             best_val_loss = avg_val_loss
         else:
-            print (f'Epoch {epoch}, val loss: {avg_val_loss:.5f}, train loss: {avg_train_loss:.5f}')
+            print (f'Epoch {epoch}, val loss: {avg_val_loss:.8f}, train loss: {avg_train_loss:.8f}')
