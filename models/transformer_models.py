@@ -75,3 +75,21 @@ class UsefulScoreRegressorMetaOnly(nn.Module):
         logits = self.head_lin2(logits)
 
         return logits
+
+
+
+class UsefulScoreRegressorLinearBaseline(nn.Module):
+    def __init__(self, num_meta_feats=0, outputs=1, dropout=0.1):
+        super().__init__()
+
+        # Initializaton
+        self.num_meta_feats = num_meta_feats
+        
+        # Head Architecture
+        self.head_lin1 = nn.Linear(in_features=self.num_meta_feats, out_features=1)
+
+
+    def forward(self, meta_feats):
+        logits = self.head_lin1(meta_feats)
+
+        return logits
