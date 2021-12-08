@@ -6,10 +6,13 @@ def get_predictions(model=None, loader=None, model_type=None, task=None):
     predictions = []
     gt = []
 
+    model.eval()
     with torch.no_grad():
         for i, batch in enumerate(loader):
             batch = [el.cuda() for el in batch]
             tokens, attention_mask, nonText, target = batch
+            if task == 'CLASSIFICATION':
+                target = target.long()
             if model_type.upper() == 'META':
                 output = model(nonText).squeeze(1)
             elif model_type.upper() == 'TEXT':
@@ -42,5 +45,6 @@ def get_reg_perf(model=None, loader=None, model_type=None):
     pred, gt = get_predictions(model, loader, model_type, 'REGRESSION')
     r2 = perf.r2_score(gt, pred)
     rmse = perf.mean_squared_error(gt, pred, squared=False)
+    mae = perf.mean_absolute_error(gt, pred)
 
-    return rmse, r2
+    return mae, rmse, r2
