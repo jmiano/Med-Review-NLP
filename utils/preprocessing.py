@@ -13,7 +13,7 @@ def clean_reviews(review):
 
 
 def load_data(file_path, year_range=[2008, 2017], usefulCount_range=[0, 10000], usefulCount_quantile=None,
-              quantiles_for_class=[0.25, 0.5, 0.75]):
+              quantiles_for_class=[0.25, 0.5, 0.75], singleCondition=None):
     # Read CSV
     df = pd.read_csv(file_path, encoding='utf-8')
 
@@ -23,6 +23,10 @@ def load_data(file_path, year_range=[2008, 2017], usefulCount_range=[0, 10000], 
     # Get most common conditions (by review count)
     top_conditions = list(df.groupby('condition').count().reset_index().sort_values(by='uniqueID', ascending=False)[:10]['condition'])
     df = df.loc[df['condition'].isin(top_conditions)]
+
+    # Get single condition (if passed in)
+    if singleCondition is not None:
+        df = df.loc[df['condition']==singleCondition]
 
     # Filter the reviews by the input year_range
     df['date'] = pd.to_datetime(df['date'])
@@ -79,6 +83,8 @@ def cap_col_val(val, usefulCount_range):
 
 def assign_bucket(val, buckets):
     for i, bucket in enumerate(buckets):
+        if val <= 0:
+            new_val = 0  # assigns the 0 label to predictions below 0
         if bucket[0] <= val < bucket[1]:
             new_val = i
     return new_val
