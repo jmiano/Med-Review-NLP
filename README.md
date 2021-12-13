@@ -9,10 +9,10 @@ Authors: Abrar Ahmed, Rachit Bhargava, Joseph Miano
 * utils: utility .py files to preprocess data and train/evaluate models
 
 ## Description of Specific Files
-#### data directory
+#### data
 * README.md: contains instructions and a link to download the data
 
-#### dev_notebooks directory
+#### dev_notebooks
 * BERT_Model_Development.ipynb: notebook containing development code for initial HuggingFace model development. This notebook does not contain our most current models or results
 * Condition_Classification_With_Saliency.ipynb: notebook containing model training and attention visualization for the condition DistilBERT text model; adapted from this tutorial: https://github.com/amaiya/ktrain/blob/master/tutorials/tutorial-A3-hugging_face_transformers.ipynb
 * Evaluate_All_Models.ipynb: notebook to evaluate all models and generate the model performance scores reported in our paper
@@ -23,15 +23,15 @@ Authors: Abrar Ahmed, Rachit Bhargava, Joseph Miano
 * Usefulness_Detector_Baselines.ipynb: code to train baseline models for usefulness detection, including linear BOW
 * ktrain_usefulness_attention_visualization.ipynb: model training and attention visualization for the useful score binary classifier DistilBERT text model; adapted from this tutorial: https://github.com/amaiya/ktrain/blob/master/tutorials/tutorial-A3-hugging_face_transformers.ipynb
 
-#### models directory
+#### models
 * transformer_models.py: file containing our specific model architectures, including text-only DistilBERT, text+meta DistilBERT, neural metadata baseline, and linear metadata baseline. The models in this file are coded such that they can be used for regression or classification by specifying the number of outputs as a parameter.
 
-#### plots directory
+#### plots
 * fig1_eda_slim.png: Figure 1 plot from our paper
 * fig2_model_eval.png: Figure 2 plot from our paper
 * fig3_combined_attention.png: Figure 3 plot from our paper
 
-#### utils directory
+#### utils
 * evaluation.py: contains functions to get predictions and evaluate the classification, regression, and ordinal regression models
 * preprocessing.py: contains functions to preprocess our data, including specifying a year range, useful count quantile cap, and useful count split for usefulness classification; this code also cleans the review text, removes duplicates, filters to include only the top 10 conditions, performs one-hot encoding of the condition column, and computes other columns like the age score and useful score
 * training.py: functions to train text-only, text + metadata, and metadata-only models
