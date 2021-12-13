@@ -4,7 +4,8 @@ import math
 
 def train_text_model(num_epochs=1, model=None, optimizer=None,
                      train_loader=None, val_loader=None,
-                     criterion=None, save_path=None, clip=1.0):
+                     criterion=None, save_path=None, clip=1.0,
+                     classify=False):
     
     best_val_loss = float(math.inf)
     for epoch in range(num_epochs):
@@ -16,6 +17,8 @@ def train_text_model(num_epochs=1, model=None, optimizer=None,
         for i, batch in enumerate(train_loader):
             batch = [el.cuda() for el in batch]
             tokens, attention_mask, nonText, target = batch
+            if classify:
+                target = target.long()
             optimizer.zero_grad()
             output = model(tokens, attention_mask).squeeze(1)
             train_loss = criterion(output, target)
@@ -37,6 +40,8 @@ def train_text_model(num_epochs=1, model=None, optimizer=None,
         for i, batch in enumerate(val_loader):
             batch = [el.cuda() for el in batch]
             tokens, attention_mask, nonText, target = batch
+            if classify:
+                target = target.long()
             optimizer.zero_grad()
             output = model(tokens, attention_mask).squeeze(1)  # get outputs
             val_loss = criterion(output, target)
@@ -56,7 +61,8 @@ def train_text_model(num_epochs=1, model=None, optimizer=None,
 
 def train_text_meta_model(num_epochs=1, model=None, optimizer=None,
                           train_loader=None, val_loader=None,
-                          criterion=None, save_path=None, clip=1.0):
+                          criterion=None, save_path=None, clip=1.0,
+                          classify=False):
     
     best_val_loss = float(math.inf)
     for epoch in range(num_epochs):
@@ -68,6 +74,8 @@ def train_text_meta_model(num_epochs=1, model=None, optimizer=None,
         for i, batch in enumerate(train_loader):
             batch = [el.cuda() for el in batch]
             tokens, attention_mask, nonText, target = batch
+            if classify:
+                target = target.long()
             optimizer.zero_grad()
             output = model(tokens, attention_mask, nonText).squeeze(1)
             train_loss = criterion(output, target)
@@ -89,6 +97,8 @@ def train_text_meta_model(num_epochs=1, model=None, optimizer=None,
         for i, batch in enumerate(val_loader):
             batch = [el.cuda() for el in batch]
             tokens, attention_mask, nonText, target = batch
+            if classify:
+                target = target.long()
             optimizer.zero_grad()
             output = model(tokens, attention_mask, nonText).squeeze(1)  # get outputs
             val_loss = criterion(output, target)
@@ -108,7 +118,8 @@ def train_text_meta_model(num_epochs=1, model=None, optimizer=None,
 
 def train_meta_model(num_epochs=1, model=None, optimizer=None,
                      train_loader=None, val_loader=None,
-                     criterion=None, save_path=None, clip=1.0):
+                     criterion=None, save_path=None, clip=1.0,
+                     classify=False):
     
     best_val_loss = float(math.inf)
     for epoch in range(num_epochs):
@@ -120,6 +131,8 @@ def train_meta_model(num_epochs=1, model=None, optimizer=None,
         for i, batch in enumerate(train_loader):
             batch = [el.cuda() for el in batch]
             tokens, attention_mask, nonText, target = batch
+            if classify:
+                target = target.long()
             optimizer.zero_grad()
             output = model(nonText).squeeze(1)
             train_loss = criterion(output, target)
@@ -141,6 +154,8 @@ def train_meta_model(num_epochs=1, model=None, optimizer=None,
         for i, batch in enumerate(val_loader):
             batch = [el.cuda() for el in batch]
             tokens, attention_mask, nonText, target = batch
+            if classify:
+                target = target.long()
             optimizer.zero_grad()
             output = model(nonText).squeeze(1)  # get outputs
             val_loss = criterion(output, target)
