@@ -1,2 +1,5 @@
-CS7650 NLP: Final Project
+# CS7650 NLP: Final Project
+Authors: Abrar Ahmed, Rachit Bhargava, Joseph Miano
 
+## How to use Usefulness Detection Baseline Models Notebook
+The usefulness detection baseline models notebook can be run, as is, from top to bottom. While executing, the user must not change the order of cell execution. Also, please note that this is a Google Colab notebook, meaning that it uses certain features available only on a Google Colab notebook. As a result, it must be uploaded directly to the platform and run over there. Finally, this notebook interacts directly with the Kaggle API to download the latest version of the dataset and then uses it. The user may need a Kaggle API token file to execute it. The notebook prompts the user to obtain it in the beginning (while also providing a link to an article that details exactly how to obtain it) and then asks the user to upload the same. This API token file is saved only in the Google Colab notebook's local session and is deleted when the session is terminated.
