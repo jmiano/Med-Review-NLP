@@ -20,7 +20,7 @@ Authors: Abrar Ahmed, Rachit Bhargava, Joseph Miano
 * **README.md:** contains instructions and a link to download the data
 
 #### dev_notebooks
-* **BERT_Model_Development.ipynb:** notebook containing development code for initial HuggingFace model development. This notebook does not contain our most current models or results
+* **BERT_Model_Development.ipynb:** notebook containing development code for initial HuggingFace model development. This notebook does not contain our most current models or results and can thus be considered deprecated
 * **Condition_Classification_With_Saliency.ipynb:** notebook containing model training and attention visualization for the condition DistilBERT text model; this notebook was developed in Google Colab and should be run in Colab; adapted from this tutorial: https://github.com/amaiya/ktrain/blob/master/tutorials/tutorial-A3-hugging_face_transformers.ipynb
 * **Evaluate_All_Models.ipynb:** notebook to evaluate all models and generate the model performance scores reported in our paper
 * **Exploratory_Analysis.ipynb:** notebook to explore the data and relationships between variables; contains the plots used in Figure 1 of our report
