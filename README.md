@@ -1,7 +1,7 @@
 # CS7650 NLP: Final Project
 Authors: Abrar Ahmed, Rachit Bhargava, Joseph Miano
 
-## Repo Directory Structure
+## Conda Environment Setup
 * Run the following command to set up the conda environment:
 	* Windows: `conda env create --name nlp_env --file nlp_env_win.yml`
 	* Linux/Mac: `conda env create --name nlp_env --file nlp_env_unix.yml`
