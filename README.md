@@ -8,7 +8,7 @@ Authors: Abrar Ahmed, Rachit Bhargava, Joseph Miano
 * **plots:** the PNG plots from our paper
 * **utils:** utility .py files to preprocess data and train/evaluate models
 
-## Description of Specific Files
+## File Descriptions
 #### data
 * README.md: contains instructions and a link to download the data
 
