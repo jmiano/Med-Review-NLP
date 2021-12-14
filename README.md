@@ -5,7 +5,7 @@ Authors: Abrar Ahmed, Rachit Bhargava, Joseph Miano
 * Run the following command to set up the conda environment:
 	* Windows: `conda env create --name nlp_env --file nlp_env_win.yml`
 	* Linux/Mac: `conda env create --name nlp_env --file nlp_env_unix.yml`
-* Please note that some of our code (e.g., training models) relies on a GPU to run locally. Please ensure that you have an NVIDIA GPU with configured Drivers to be able to run all of our code.
+* Please note that some of our code (e.g., training models) relies on a GPU to run locally. Please ensure that you have an NVIDIA GPU with configured Drivers to be able to run our code locally.
 
 ## Repo Directory Structure
 * **data:** directory in which the raw data should be placed to run our code locally. The data can be downloaded from here: https://www.kaggle.com/jessicali9530/kuc-hackathon-winter-2018
