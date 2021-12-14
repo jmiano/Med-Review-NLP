@@ -96,7 +96,7 @@ class UsefulScoreRegressorLinearBaseline(nn.Module):
     
     
     
- class DrugLinearRegression(nn.Module):    #### Note: this model is an alias for UsefulScoreRegressorLinearBaseline
+class DrugLinearRegression(nn.Module):    #### Note: this model is an alias for UsefulScoreRegressorLinearBaseline
     def __init__(self, num_meta_feats=0, outputs=1, dropout=0.1):
         super().__init__()
 
