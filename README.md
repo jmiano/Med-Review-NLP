@@ -5,6 +5,7 @@ Authors: Abrar Ahmed, Rachit Bhargava, Joseph Miano
 * Run the following command to set up the conda environment:
 	* Windows: `conda env create --name nlp_env --file nlp_env_win.yml`
 	* Linux/Mac: `conda env create --name nlp_env --file nlp_env_unix.yml`
+* Please ensure that the nlp_env is active whenever running Jupyter notebooks locally, and ensure that the nlp_env is active in the notebook instance by checking the `Change Kernel` menu in the `Kernels` tab of the browser running Jupyter notebooks.
 * Please note that some of our code (e.g., training models) relies on a GPU to run locally. Please ensure that you have an NVIDIA GPU with configured Drivers to be able to run our code locally.
 
 ## Repo Directory Structure
