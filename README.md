@@ -8,7 +8,7 @@ Authors: Abrar Ahmed, Rachit Bhargava, Joseph Miano
 * Please note that some of our code (e.g., training models) relies on a GPU to run locally. Please ensure that you have an NVIDIA GPU with configured Drivers to be able to run our code locally.
 
 ## Repo Directory Structure
-* **data:** directory in which the raw data should be placed to run our code locally. The data can be downloaded from here: https://www.kaggle.com/jessicali9530/kuc-hackathon-winter-2018
+* **data:** directory in which the raw data should be placed to run our code locally. The data can be downloaded from here: https://www.kaggle.com/jessicali9530/kuc-hackathon-winter-2018, and should be unzipped in the **data** directory once downloaded
 * **dev_notebooks:** directory containing our Jupyter notebooks for exploratory analyses, model training and evaluation, and attention visualization
 * **models:** model architecture file; also, model .pt files are saved here when running our code to train models
 * **plots:** the PNG plots from our paper
