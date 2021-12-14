@@ -2,11 +2,11 @@
 Authors: Abrar Ahmed, Rachit Bhargava, Joseph Miano
 
 ## Repo Directory Structure
-* data: directory in which the raw data should be placed to run our code locally. The data can be downloaded from here: https://www.kaggle.com/jessicali9530/kuc-hackathon-winter-2018
-* dev_notebooks: directory containing our Jupyter notebooks for exploratory analyses, model training and evaluation, and attention visualization
-* models: model architecture file; also, model .pt files are saved here when running our code to train models
-* plots: the PNG plots from our paper
-* utils: utility .py files to preprocess data and train/evaluate models
+* **data:** directory in which the raw data should be placed to run our code locally. The data can be downloaded from here: https://www.kaggle.com/jessicali9530/kuc-hackathon-winter-2018
+* **dev_notebooks:** directory containing our Jupyter notebooks for exploratory analyses, model training and evaluation, and attention visualization
+* **models:** model architecture file; also, model .pt files are saved here when running our code to train models
+* **plots:** the PNG plots from our paper
+* **utils:** utility .py files to preprocess data and train/evaluate models
 
 ## Description of Specific Files
 #### data
