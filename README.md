@@ -20,14 +20,14 @@ Authors: Abrar Ahmed, Rachit Bhargava, Joseph Miano
 
 #### dev_notebooks
 * BERT_Model_Development.ipynb: notebook containing development code for initial HuggingFace model development. This notebook does not contain our most current models or results
-* Condition_Classification_With_Saliency.ipynb: notebook containing model training and attention visualization for the condition DistilBERT text model; adapted from this tutorial: https://github.com/amaiya/ktrain/blob/master/tutorials/tutorial-A3-hugging_face_transformers.ipynb
+* Condition_Classification_With_Saliency.ipynb: notebook containing model training and attention visualization for the condition DistilBERT text model; this notebook was developed in Google Colab and should be run in Colab; adapted from this tutorial: https://github.com/amaiya/ktrain/blob/master/tutorials/tutorial-A3-hugging_face_transformers.ipynb
 * Evaluate_All_Models.ipynb: notebook to evaluate all models and generate the model performance scores reported in our paper
 * Exploratory_Analysis.ipynb: notebook to explore the data and relationships between variables; contains the plots used in Figure 1 of our report
 * Generate_Model_Plots.ipynb: contains code to generate our model evaluation plots, including those used in Figure 2 of our report
 * Train_All_Classification_Models.ipynb: code to train all of our useful-score classification-based models
 * Train_All_Regression_Models.ipynb: code to train regression-based models (linear metadata, neural metadata, DistilBERT with text only, and DistilBERT with text + metadata)
-* Usefulness_Detector_Baselines.ipynb: code to train baseline models for usefulness detection, including linear BOW
-* ktrain_usefulness_attention_visualization.ipynb: model training and attention visualization for the useful score binary classifier DistilBERT text model; adapted from this tutorial: https://github.com/amaiya/ktrain/blob/master/tutorials/tutorial-A3-hugging_face_transformers.ipynb
+* Usefulness_Detector_Baselines.ipynb: code to train baseline models for usefulness detection, including linear BOW; this notebook was developed in Google Colab and should be run in Colab
+* ktrain_usefulness_attention_visualization.ipynb: model training and attention visualization for the useful score binary classifier DistilBERT text model; this notebook was developed in Google Colab and should be run in Colab; adapted from this tutorial: https://github.com/amaiya/ktrain/blob/master/tutorials/tutorial-A3-hugging_face_transformers.ipynb
 
 #### models
 * transformer_models.py: file containing our specific model architectures, including text-only DistilBERT, text+meta DistilBERT, neural metadata baseline, and linear metadata baseline. The models in this file are coded such that they can be used for regression or classification by specifying the number of outputs as a parameter.
